@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <listeners>
+        <listener class-name="kz.akvelon.listeners.ListenerTest"/>
+    </listeners>
+    <test name="shop kz tests cases">
+        <packages>
+            <package name="kz.akvelon.tests"/>
+        </packages>
+    </test>
+</suite>
