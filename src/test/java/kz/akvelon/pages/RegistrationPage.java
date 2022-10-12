@@ -24,7 +24,7 @@ public class RegistrationPage {
 
     @FindBy(xpath = "//input[@id=\"REG_USER_PASSWORD\"]")
     private WebElement inputPassword;
-//<input type="password" class="form-control" name="USER_PASSWORD" maxlength="255" id="REG_USER_PASSWORD" value="" autocomplete="off">
+
     @FindBy(xpath = "//input[@name=\"USER_CONFIRM_PASSWORD\"]")
     private WebElement inputCorrectPassword;
 
@@ -34,42 +34,42 @@ public class RegistrationPage {
     private WebElement cancelSpam;
 
 
-
     public RegistrationPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public void sendKeyName(){
+    public void sendKeyName() {
         inputName.clear();
         inputName.sendKeys("Zhandos");
     }
-    public void sendKeySurname(){
+
+    public void sendKeySurname() {
         inputSurname.clear();
         inputSurname.sendKeys("Kudaybergen");
     }
-    public void sendKeyEmail(){
+
+    public void sendKeyEmail() {
         inputEmail.clear();
         inputEmail.sendKeys("janjan.06.kz@gmail.com");
     }
-    public void sendKeyPassword(){
+
+    public void sendKeyPassword() {
 //        inputPassword.clear();
         inputPassword.sendKeys("5nFy2UWCJ2b");
     }
-    public void sendKeyCorrectPassword(){
+
+    public void sendKeyCorrectPassword() {
         inputCorrectPassword.clear();
         inputCorrectPassword.sendKeys("5nFy2UWCJ2b", Keys.ENTER);
     }
-    public void sendKeyPhone(){
+
+    public void sendKeyPhone() {
         inputPhone.clear();
         inputPhone.sendKeys("77476357012");
     }
-    public void cancelSpam(){
-//        cancelSpam.clear();
-        cancelSpam.sendKeys("Y");
-    }
 
-    public void registration(){
+    public void registration() {
         linkToRegistration.click();
     }
 }
