@@ -15,10 +15,7 @@ public class ListOfSmartphonesPage {
 
     @FindBy(xpath = "//a[@id=\"bx_3966226736_1451597_buy_link\"]")
     private WebElement buttonAddToOrder;
-    ///<a class="sprite-side novisited hub-i-link hub-i-cart-link-count" href="/personal/basket/">
-    //            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-    //            <span class="xhr">Корзина</span>
-    //            <span class="hub-i-count">1</span> </a>
+
     @FindBy(xpath = "//a[@href=\"/personal/basket/\"]")
     private WebElement linkGoToOrder;
 
@@ -28,7 +25,6 @@ public class ListOfSmartphonesPage {
     @FindBy(xpath = "//a[@href=\"/personal/wishlist/\"]")
     private WebElement buttonGoToWishList;
 
-//<h1 class="bx-title dbg_title" id="pagetitle">Мой список желаний</h1>
     @FindBy(xpath = "//h1[@id=\"pagetitle\"]")
     private WebElement headingText;
 

@@ -23,7 +23,7 @@ public class MapPage {
         linkToMap.click();
     }
 
-    public String getTextMap(){
+    public String getTextMap() {
         return textMap.getText();
     }
 }

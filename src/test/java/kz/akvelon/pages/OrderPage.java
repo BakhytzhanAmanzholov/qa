@@ -14,19 +14,16 @@ public class OrderPage {
     @FindBy(xpath = "//button[contains(@onclick, \"itemBasketDelete\")]")
     private WebElement cancelOrder;
 
-
-
     public OrderPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-
     public String getString() {
         return stringOrder.getText();
     }
 
-    public void clickToCancelOrder(){
+    public void clickToCancelOrder() {
         cancelOrder.click();
     }
 }

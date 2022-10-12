@@ -33,6 +33,4 @@ public class LoginPage {
     public void sendKeysPassword() {
         userPassword.sendKeys("5nFy2UWCJ2b", Keys.ENTER);
     }
-
-
 }

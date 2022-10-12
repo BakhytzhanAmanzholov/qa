@@ -7,10 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
-
-
     public WebDriver driver;
-
 
     @FindBy(xpath = "//input[@name=\"query\"]")
     private WebElement queryInput;
@@ -60,31 +57,31 @@ public class MainPage {
         linkToLogin.click();
     }
 
-    public void closeWindows(){
+    public void closeWindows() {
         closeWindow.click();
     }
 
-    public String getUsername(){
+    public String getUsername() {
         return usernameLabel.getText();
     }
 
-    public void goToExit(){
+    public void goToExit() {
         linkToExit.click();
     }
 
-    public String textLogin(){
+    public String textLogin() {
         return linkToLogin.getText();
     }
 
-    public void changeCity(){
+    public void changeCity() {
         linkChangeCity.click();
     }
 
-    public void changeCityToAstana(){
+    public void changeCityToAstana() {
         linkChangeCityAstana.click();
     }
 
-    public String getTextCity(){
+    public String getTextCity() {
         return linkChangeCityAstana.getText();
     }
 
