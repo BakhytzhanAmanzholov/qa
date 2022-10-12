@@ -55,7 +55,6 @@ public class RegistrationPage {
     }
 
     public void sendKeyPassword() {
-//        inputPassword.clear();
         inputPassword.sendKeys("5nFy2UWCJ2b");
     }
 

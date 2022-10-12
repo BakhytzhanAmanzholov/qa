@@ -19,33 +19,29 @@ public class SmartphonePage {
     @FindBy(xpath = "//span[@class=\"btn btn-primary\"]")
     private WebElement buttonToSend;
 
-    //<p class="bx-catalog-popup-message">Вы успешно подписались</p>
-
     @FindBy(xpath = "//p[contains(text(),'Вы успешно подписались')]")
     private WebElement labelSubscribe;
-
-
 
     public SmartphonePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public void clickToButtonSubscribe(){
+    public void clickToButtonSubscribe() {
         buttonToSubscribe.click();
     }
 
-    public void sendKeysToUserData(){
+    public void sendKeysToUserData() {
         userData.click();
         userData.sendKeys("kamilakiubaeva@gmail.com");
     }
 
-    public void sendToEmailNot(){
-        JavascriptExecutor ex=(JavascriptExecutor)driver;
+    public void sendToEmailNot() {
+        JavascriptExecutor ex = (JavascriptExecutor) driver;
         ex.executeScript("arguments[0].click()", buttonToSend);
     }
 
-    public String getTextSubscribe(){
+    public String getTextSubscribe() {
         return labelSubscribe.getText();
     }
 

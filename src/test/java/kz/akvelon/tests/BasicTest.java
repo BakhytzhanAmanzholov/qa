@@ -43,7 +43,7 @@ public class BasicTest {
     private static ReadParam readParam;
 
     @BeforeClass
-    public static void setup() throws Exception{
+    public static void setup() throws Exception {
         String web = ConfProperties.getProperty("web");
         if (Objects.equals(web, "firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -77,21 +77,19 @@ public class BasicTest {
         inStream.close();
         workbook.close();
         webdriver.close();
-//        driver.close();
     }
 
     @Test
     public void mapTest() {
-        try{
+        try {
             webdriver.navigate().to(ConfProperties.getProperty("mappage"));
             mapPage.goToMap();
 
             writeResult.writeResult(worksheet, "Ещё", mapPage.getTextMap(),
                     "Map test", true);
             Assert.assertEquals(mapPage.getTextMap(), "Ещё");
-        }
-        catch (Exception e){
-            writeResult.writeResult(worksheet, "Ещё","",
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Ещё", "",
                     "Map test", false);
             throw e;
         }

@@ -28,14 +28,11 @@ public class ReadParamFromExcel implements ReadParam {
         }
 
         Row row;
-        //goto first cell
         Cell cell;
 
         int rowsCount = worksheet.getPhysicalNumberOfRows();
-        //worksheet.getLastRowNum();
 
         System.out.println("Number of rows: " + rowsCount);
-        //print all firstnames using a loop
 
         for (int rowNum = 0; rowNum < rowsCount; rowNum++) {
             row = worksheet.getRow(rowNum);

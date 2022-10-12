@@ -35,13 +35,10 @@ public class ProductsTest {
 
     public static FindProductPage findProductPage;
 
-
     public static FilterPage filterPage;
     public static SmartphonePage smartphonePage;
 
     public static WebDriver webdriver;
-
-//    public static WebDriverWait;
 
     static Sheet worksheet;
     static Workbook workbook;
@@ -54,7 +51,7 @@ public class ProductsTest {
 
 
     @BeforeClass
-    public static void setup() throws Exception{
+    public static void setup() throws Exception {
         String web = ConfProperties.getProperty("web");
         if (Objects.equals(web, "firefox")) {
             WebDriverManager.firefoxdriver().setup();
@@ -98,8 +95,6 @@ public class ProductsTest {
         outStream.close();
         inStream.close();
         workbook.close();
-//        webdriver.close();
-//        driver.close();
     }
 
     @Test
@@ -117,7 +112,7 @@ public class ProductsTest {
 
     @Test
     public void makingOrder() {
-        try{
+        try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
 
             mainPage.closeWindows();
@@ -134,10 +129,8 @@ public class ProductsTest {
             writeResult.writeResult(worksheet, "Общая стоимость:", orderPage.getString(),
                     "Making Order", true);
             Assert.assertEquals(orderPage.getString(), "Общая стоимость:");
-        }
-
-        catch(Exception e){
-            writeResult.writeResult(worksheet, "Общая стоимость:","",
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Общая стоимость:", "",
                     "Making Order", false);
             throw e;
 
@@ -147,28 +140,17 @@ public class ProductsTest {
 
     @Test
     public void orderCancellation() {
-        try{
-//            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+        try {
             webdriver.navigate().to(ConfProperties.getProperty("m"));
 
             listOfSmartphonesPage.clickToOrder();
             orderPage.clickToCancelOrder();
-//        mainPage.goToCatalogGadgets();
-//        catalogGadgetsPage.clickLinkToGadgets();
-//        catalogSmartphonesPage.clickLinkToGadgets();
-//        listOfSmartphonesPage.addToOrder();
-//        webdriver.navigate().refresh();
-//        listOfSmartphonesPage.addToOrder();
-//        orderPage.clickToCancelOrder();
-//
 
             writeResult.writeResult(worksheet, "", orderPage.getString(),
                     "Order Cancellation", true);
             Assert.assertEquals(orderPage.getString(), "");
-        }
-
-        catch(Exception e){
-            writeResult.writeResult(worksheet, "","",
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "", "",
                     "Order Cancellation", false);
             throw e;
 
@@ -178,7 +160,6 @@ public class ProductsTest {
     @Test
     public void findProductTest() {
         try {
-//            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
             webdriver.navigate().to(ConfProperties.getProperty("m"));
 
             mainPage.clearQuery();
@@ -190,9 +171,8 @@ public class ProductsTest {
             writeResult.writeResult(worksheet, "Результаты поиска по запросу \"Acer nitro 5\"", findProductPage.getString(),
                     "Find Product test", true);
             Assert.assertEquals(findProductPage.getString(), "Результаты поиска по запросу \"Acer nitro 5\"");
-        }
-        catch (Exception e){
-            writeResult.writeResult(worksheet, "Результаты поиска по запросу \"Acer nitro 5\"","",
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Результаты поиска по запросу \"Acer nitro 5\"", "",
                     "Find Product test", false);
             throw e;
         }
@@ -209,18 +189,17 @@ public class ProductsTest {
             writeResult.writeResult(worksheet, "Фильтрация результатов поиска по \"min:40000, max:120000\"", findProductPage.getString(),
                     "Filtering Search Results Test", true);
             Assert.assertEquals(filterPage.howMany(), "46");
-    }
-        catch (Exception e){
-        writeResult.writeResult(worksheet, "Фильтрация результатов поиска по \"min:40000, max:120000\"","",
-                "Filtering Search Results Test", false);
-        throw e;
-    }
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Фильтрация результатов поиска по \"min:40000, max:120000\"", "",
+                    "Filtering Search Results Test", false);
+            throw e;
+        }
 
     }
 
     @Test
     public void notifyTest() {
-        try{
+        try {
             webdriver.navigate().to("https://shop.kz/offer/proigryvatel-vinilovykh-plastinok-ritmix-lp-160b-blue/");
 
             smartphonePage.clickToButtonSubscribe();
@@ -233,9 +212,8 @@ public class ProductsTest {
                     "Notify Test", true);
             Assert.assertEquals(smartphonePage.getTextSubscribe(), "Вы успешно подписались");
 
-        }
-        catch (Exception e){
-            writeResult.writeResult(worksheet, "Вы успешно подписались","",
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Вы успешно подписались", "",
                     "Notify Test", false);
             throw e;
         }
@@ -246,7 +224,6 @@ public class ProductsTest {
     @Test
     public void wishlistTest() {
         webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-//        mainPage.closeWindows();
         mainPage.goToCatalogGadgets();
         catalogGadgetsPage.clickLinkToGadgets();
         catalogSmartphonesPage.clickLinkToGadgets();

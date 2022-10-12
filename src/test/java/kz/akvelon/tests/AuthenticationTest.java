@@ -43,14 +43,13 @@ public class AuthenticationTest {
     private static ReadParam readParam;
 
     @BeforeClass
-    public static void setup() throws Exception{
+    public static void setup() throws Exception {
         String web = ConfProperties.getProperty("web");
-        if(Objects.equals(web, "firefox")){
+        if (Objects.equals(web, "firefox")) {
             WebDriverManager.firefoxdriver().setup();
             webdriver = new FirefoxDriver();
             System.setProperty("webdriver.gecko.driver", "geckodriver");
-        }
-        else {
+        } else {
             WebDriverManager.chromedriver().setup();
             webdriver = new ChromeDriver();
             System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
@@ -79,7 +78,6 @@ public class AuthenticationTest {
         inStream.close();
         workbook.close();
         webdriver.close();
-//        driver.close();
     }
 
 
@@ -96,14 +94,14 @@ public class AuthenticationTest {
             registrationPage.sendKeyCorrectPassword();
             registrationPage.registration();
             writeResult.writeResult(worksheet, "Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", true);
-        }catch (Exception e){
+        } catch (Exception e) {
             writeResult.writeResult(worksheet, "Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", false);
             throw e;
         }
     }
 
     @Test
-    public void exitTest(){
+    public void exitTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
             mainPage.closeWindows();
@@ -113,28 +111,25 @@ public class AuthenticationTest {
             mainPage.goToExit();
             writeResult.writeResult(worksheet, "Выход из аккаунта", "", "Log out test", true);
             Assert.assertEquals(mainPage.textLogin(), "Выход");
-    }catch (Exception e){
+        } catch (Exception e) {
             writeResult.writeResult(worksheet, "Выход из аккаунта", "", "Log out test", false);
             throw e;
-    }
+        }
     }
 
     @Test
     public void loginTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-    //        mainPage.closeWindows();
             mainPage.goToLogin();
             loginPage.sendKeysLogin();
             loginPage.sendKeysPassword();
             Assert.assertEquals(mainPage.getUsername(), "Zhandos Kudaybergen");
             mainPage.goToExit();
             writeResult.writeResult(worksheet, "Вход в аккаунт", "", "Log in test", true);
-    }catch (Exception e){
-        writeResult.writeResult(worksheet, "Вход в аккаунт", "", "Log in test", false);
-        throw e;
+        } catch (Exception e) {
+            writeResult.writeResult(worksheet, "Вход в аккаунт", "", "Log in test", false);
+            throw e;
+        }
     }
-    }
-
-
 }
