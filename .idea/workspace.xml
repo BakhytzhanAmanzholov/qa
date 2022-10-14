@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86befbd6-c1e8-4fc4-995c-da4d81a17d9e" name="Changes" comment="first">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/models/Data.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/models/Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/repository/ReadParamFromDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/repository/WriteResultToDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/driver/CreateDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/CreatorLogging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/ExcelLogging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/ReadParamFromExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/excel/ReadParamFromExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResultToExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/excel/WriteResultToExcel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/conf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +169,7 @@
       <workItem from="1665352587613" duration="2186000" />
       <workItem from="1665570329449" duration="469000" />
       <workItem from="1665761965811" duration="2914000" />
+      <workItem from="1665767372766" duration="2539000" />
     </task>
     <servers />
   </component>
