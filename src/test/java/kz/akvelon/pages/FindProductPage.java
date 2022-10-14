@@ -11,8 +11,6 @@ public class FindProductPage {
     @FindBy(xpath = "//h1[@id=\"pagetitle\"]")
     private WebElement titlePage;
 
-
-
     public FindProductPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;

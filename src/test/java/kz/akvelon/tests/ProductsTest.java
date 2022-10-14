@@ -30,7 +30,6 @@ public class ProductsTest {
 
     public static WebDriver webdriver;
 
-
     private static WriteResult writeResult;
 
     private static ReadParam readParam;
@@ -133,8 +132,6 @@ public class ProductsTest {
     public void findProductTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-
-//            webdriver.navigate().to(ConfProperties.getProperty("m"));
 
             mainPage.clearQuery();
             mainPage.clickToQuery();

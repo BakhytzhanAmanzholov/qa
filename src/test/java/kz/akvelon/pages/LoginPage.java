@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
     public WebDriver driver;
 
-
     @FindBy(xpath = "//input[@name=\"query\"]")
     private WebElement queryInput;
 

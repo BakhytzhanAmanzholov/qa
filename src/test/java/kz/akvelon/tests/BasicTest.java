@@ -13,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
 @Listeners(ListenerTest.class)
 public class BasicTest {
 
@@ -27,15 +26,11 @@ public class BasicTest {
 
     private static CreatorLogging logging;
 
-
-//    private static ReadParam readParam;
-
     @BeforeClass
     public static void setup() {
         webdriver = CreateDriver.createDriver();
         logging = CreatorLogging.getLogging();
         writeResult = logging.createWriteResult();
-//        readParam = logging.createReadParam();
 
         webdriver.get(ConfProperties.getProperty("mappage"));
 
@@ -68,7 +63,6 @@ public class BasicTest {
     @Test
     public void changeCityTest() {
         webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-//        mainPage.closeWindows();
         mainPage.changeCity();
         mainPage.changeCityToAstana();
         webdriver.navigate().refresh();

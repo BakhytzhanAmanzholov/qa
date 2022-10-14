@@ -28,14 +28,11 @@ public class AuthenticationTest {
 
     private static WriteResult writeResult;
 
-//    private static ReadParam readParam;
-
     @BeforeClass
     public static void setup() {
         webdriver = CreateDriver.createDriver();
         logging = CreatorLogging.getLogging();
         writeResult = logging.createWriteResult();
-//        readParam = logging.createReadParam();
 
         registrationPage = new RegistrationPage(webdriver);
         mainPage = new MainPage(webdriver);

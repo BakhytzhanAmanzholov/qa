@@ -16,17 +16,13 @@ public class FilterPage {
     @FindBy(xpath = "//a[contains(text(),'Показать')]")
     private WebElement buttonSubmit;
 
-
     @FindBy(xpath = "//strong[contains(text(),'46')]")
     private WebElement countFilter;
-
-
 
     public FilterPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
 
     public void sendReqMin(){
         inputMin.sendKeys("40000");
