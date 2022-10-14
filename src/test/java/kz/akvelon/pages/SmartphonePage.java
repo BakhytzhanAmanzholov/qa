@@ -30,9 +30,9 @@ public class SmartphonePage {
         buttonToSubscribe.click();
     }
 
-    public void sendKeysToUserData() {
+    public void sendKeysToUserData(String email) {
         userData.click();
-        userData.sendKeys("kamilakiubaeva@gmail.com");
+        userData.sendKeys(email);
     }
 
     public void sendToEmailNot() {

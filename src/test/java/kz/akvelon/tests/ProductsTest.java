@@ -135,7 +135,7 @@ public class ProductsTest {
 
             mainPage.clearQuery();
             mainPage.clickToQuery();
-            mainPage.sendRequest();
+            mainPage.sendRequest("Acer nitro 5");
 
             System.out.println(readParam.readParam("hello"));
 
@@ -154,8 +154,8 @@ public class ProductsTest {
     public void filterProductTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("filterpage"));
-            filterPage.sendReqMin();
-            filterPage.sendReqMax();
+            filterPage.sendReqMin("40000");
+            filterPage.sendReqMax("120000");
             filterPage.setFilter();
             writeResult.writeResult("Фильтрация результатов поиска по \"min:40000, max:120000\"", findProductPage.getString(),
                     "Filtering Search Results Test", true);
@@ -174,7 +174,7 @@ public class ProductsTest {
             webdriver.navigate().to("https://shop.kz/offer/proigryvatel-vinilovykh-plastinok-ritmix-lp-160b-blue/");
 
             smartphonePage.clickToButtonSubscribe();
-            smartphonePage.sendKeysToUserData();
+            smartphonePage.sendKeysToUserData("kamilakiubaeva@gmail.com");
             smartphonePage.sendToEmailNot();
 
             System.out.println(readParam.readParam("hello"));

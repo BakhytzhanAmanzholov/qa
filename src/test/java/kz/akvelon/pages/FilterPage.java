@@ -24,11 +24,11 @@ public class FilterPage {
         this.driver = driver;
     }
 
-    public void sendReqMin(){
-        inputMin.sendKeys("40000");
+    public void sendReqMin(String min){
+        inputMin.sendKeys(min);
     }
-    public void sendReqMax(){
-        inputMax.sendKeys("120000");
+    public void sendReqMax(String max){
+        inputMax.sendKeys(max);
     }
 
     public void setFilter(){

@@ -50,12 +50,12 @@ public class AuthenticationTest {
     public void registrationTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("registrationpage"));
-            registrationPage.sendKeyName();
-            registrationPage.sendKeySurname();
-            registrationPage.sendKeyEmail();
-            registrationPage.sendKeyPhone();
-            registrationPage.sendKeyPassword();
-            registrationPage.sendKeyCorrectPassword();
+            registrationPage.sendKeyName("Zhandos");
+            registrationPage.sendKeySurname("Kudaybergen");
+            registrationPage.sendKeyEmail("janjan.06.kz@gmail.com");
+            registrationPage.sendKeyPhone("77476357012");
+            registrationPage.sendKeyPassword("5nFy2UWCJ2b");
+            registrationPage.sendKeyCorrectPassword("5nFy2UWCJ2b");
             registrationPage.registration();
             writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", true); // TODO: исправить acutal
         } catch (Exception e) {
@@ -70,8 +70,8 @@ public class AuthenticationTest {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
             mainPage.closeWindows();
             mainPage.goToLogin();
-            loginPage.sendKeysLogin();
-            loginPage.sendKeysPassword();
+            loginPage.sendKeysLogin("janjan.06.kz@gmail.com");
+            loginPage.sendKeysPassword("5nFy2UWCJ2b");
             mainPage.goToExit();
             writeResult.writeResult("Выход из аккаунта", "", "Log out test", true); // TODO: исправить acutal
             Assert.assertEquals(mainPage.textLogin(), "Выход"); // здесь тоже постарайтесь, но здесь намного сложнее
@@ -86,8 +86,8 @@ public class AuthenticationTest {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
             mainPage.goToLogin();
-            loginPage.sendKeysLogin();
-            loginPage.sendKeysPassword();
+            loginPage.sendKeysLogin("janjan.06.kz@gmail.com");
+            loginPage.sendKeysPassword("5nFy2UWCJ2b");
             Assert.assertEquals(mainPage.getUsername(), "Zhandos Kudaybergen");
             mainPage.goToExit();
             writeResult.writeResult("Вход в аккаунт", "", "Log in test", true); // TODO: исправить acutal

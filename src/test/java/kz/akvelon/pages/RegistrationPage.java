@@ -37,33 +37,33 @@ public class RegistrationPage {
         this.driver = driver;
     }
 
-    public void sendKeyName() {
+    public void sendKeyName(String name) {
         inputName.clear();
-        inputName.sendKeys("Zhandos");
+        inputName.sendKeys(name);
     }
 
-    public void sendKeySurname() {
+    public void sendKeySurname(String surname) {
         inputSurname.clear();
-        inputSurname.sendKeys("Kudaybergen");
+        inputSurname.sendKeys(surname);
     }
 
-    public void sendKeyEmail() {
+    public void sendKeyEmail(String email) {
         inputEmail.clear();
-        inputEmail.sendKeys("janjan.06.kz@gmail.com");
+        inputEmail.sendKeys(email);
     }
 
-    public void sendKeyPassword() {
-        inputPassword.sendKeys("5nFy2UWCJ2b");
+    public void sendKeyPassword(String password) {
+        inputPassword.sendKeys(password);
     }
 
-    public void sendKeyCorrectPassword() {
+    public void sendKeyCorrectPassword(String password) {
         inputCorrectPassword.clear();
-        inputCorrectPassword.sendKeys("5nFy2UWCJ2b", Keys.ENTER);
+        inputCorrectPassword.sendKeys(password, Keys.ENTER);
     }
 
-    public void sendKeyPhone() {
+    public void sendKeyPhone(String phone) {
         inputPhone.clear();
-        inputPhone.sendKeys("77476357012");
+        inputPhone.sendKeys(phone);
     }
 
     public void registration() {

@@ -44,8 +44,8 @@ public class MainPage {
         queryInput.click();
     }
 
-    public void sendRequest() {
-        queryInput.sendKeys("Acer nitro 5");
+    public void sendRequest(String request) {
+        queryInput.sendKeys(request);
         queryInput.sendKeys(Keys.ENTER);
     }
 

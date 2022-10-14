@@ -24,12 +24,12 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void sendKeysLogin() {
+    public void sendKeysLogin(String email) {
         userLogin.clear();
-        userLogin.sendKeys("janjan.06.kz@gmail.com");
+        userLogin.sendKeys(email);
     }
 
-    public void sendKeysPassword() {
-        userPassword.sendKeys("5nFy2UWCJ2b", Keys.ENTER);
+    public void sendKeysPassword(String password) {
+        userPassword.sendKeys(password, Keys.ENTER);
     }
 }
