@@ -5,16 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86befbd6-c1e8-4fc4-995c-da4d81a17d9e" name="Changes" comment="first">
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/ListOfSmartphonesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/ListOfSmartphonesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MapPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MapPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/OrderPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/models/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/models/Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/repository/ReadParamFromDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/repository/WriteResultToDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/driver/CreateDriver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/CreatorLogging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/ExcelLogging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/ReadParamFromExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/excel/ReadParamFromExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/WriteResultToExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/services/excel/WriteResultToExcel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/conf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,13 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bakhytzhan/qa/src/test/java/kz/akvelon&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bakhytzhan\qa\src\test\java\kz\akvelon" />
+    </key>
   </component>
-  <component name="RunManager" selected="TestNG.ProductsTest.makingOrder">
+  <component name="RunManager" selected="TestNG.ProductsTest.orderCancellation">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -42,24 +77,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicTest.changeCityTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="qa1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="kz.akvelon.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="kz.akvelon.tests" />
-      <option name="MAIN_CLASS_NAME" value="kz.akvelon.tests.BasicTest" />
-      <option name="METHOD_NAME" value="changeCityTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -82,8 +99,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsTest.findProductTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="qa1" />
+    <configuration name="C:/Users/Bakhytzhan/qa/src/test/testing.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="qa" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/testing.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsTest.findProductTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="qa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kz.akvelon.tests.*" />
@@ -118,8 +145,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductsTest.notifyTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="qa1" />
+    <configuration name="ProductsTest.orderCancellation" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="qa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kz.akvelon.tests.*" />
@@ -128,7 +155,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="kz.akvelon.tests" />
       <option name="MAIN_CLASS_NAME" value="kz.akvelon.tests.ProductsTest" />
-      <option name="METHOD_NAME" value="notifyTest" />
+      <option name="METHOD_NAME" value="orderCancellation" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -138,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.ProductsTest.orderCancellation" />
+        <item itemvalue="TestNG.C:/Users/Bakhytzhan/qa/src/test/testing.xml" />
+        <item itemvalue="TestNG.ProductsTest.findProductTest (1)" />
         <item itemvalue="TestNG.ProductsTest.makingOrder" />
         <item itemvalue="TestNG.BasicTest.mapTest" />
-        <item itemvalue="TestNG.BasicTest.changeCityTest" />
-        <item itemvalue="TestNG.ProductsTest.notifyTest" />
-        <item itemvalue="TestNG.ProductsTest.findProductTest" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +185,7 @@
       <workItem from="1665343803063" duration="213000" />
       <workItem from="1665352587613" duration="2186000" />
       <workItem from="1665570329449" duration="469000" />
+      <workItem from="1665761965811" duration="2914000" />
     </task>
     <servers />
   </component>
@@ -174,7 +202,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />

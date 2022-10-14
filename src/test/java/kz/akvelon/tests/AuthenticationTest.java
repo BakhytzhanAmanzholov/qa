@@ -1,28 +1,19 @@
 package kz.akvelon.tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import kz.akvelon.listeners.ListenerTest;
 import kz.akvelon.pages.LoginPage;
 import kz.akvelon.pages.MainPage;
 import kz.akvelon.pages.RegistrationPage;
 import kz.akvelon.services.*;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import kz.akvelon.utils.driver.CreateDriver;
+import kz.akvelon.utils.logging.CreatorLogging;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 @Listeners(ListenerTest.class)
 public class AuthenticationTest {
@@ -33,50 +24,27 @@ public class AuthenticationTest {
     public static MainPage mainPage;
     public static LoginPage loginPage;
 
-    static Sheet worksheet;
-    static Workbook workbook;
-    static FileInputStream inStream;
-    static FileOutputStream outStream;
+    private static CreatorLogging logging;
 
     private static WriteResult writeResult;
 
-    private static ReadParam readParam;
+//    private static ReadParam readParam;
 
     @BeforeClass
-    public static void setup() throws Exception {
-        String web = ConfProperties.getProperty("web");
-        if (Objects.equals(web, "firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            webdriver = new FirefoxDriver();
-            System.setProperty("webdriver.gecko.driver", "geckodriver");
-        } else {
-            WebDriverManager.chromedriver().setup();
-            webdriver = new ChromeDriver();
-            System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
-        }
-        webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    public static void setup() {
+        webdriver = CreateDriver.createDriver();
+        logging = CreatorLogging.getLogging();
+        writeResult = logging.createWriteResult();
+//        readParam = logging.createReadParam();
+
         registrationPage = new RegistrationPage(webdriver);
         mainPage = new MainPage(webdriver);
         loginPage = new LoginPage(webdriver);
-
-        inStream =
-                new FileInputStream(ConfProperties.getProperty("shopkz.testdata.path"));
-        workbook = WorkbookFactory.create(inStream);
-        worksheet = workbook.getSheetAt(0);
-
-        writeResult = new WriteResultToExcel();
-        readParam = new ReadParamFromExcel(ConfProperties.getProperty("params.testdata.path"));
     }
 
     @AfterClass
-    public void tearDown() throws IOException {
-        outStream = new FileOutputStream(
-                ConfProperties.getProperty("shopkz.testdata.path"));
-        workbook.write(outStream);
-        outStream.close();
-        inStream.close();
-        workbook.close();
+    public void tearDown() {
+        logging.closeLogging();
         webdriver.close();
     }
 
@@ -84,7 +52,6 @@ public class AuthenticationTest {
     @Test
     public void registrationTest() {
         try {
-
             webdriver.navigate().to(ConfProperties.getProperty("registrationpage"));
             registrationPage.sendKeyName();
             registrationPage.sendKeySurname();
@@ -93,9 +60,9 @@ public class AuthenticationTest {
             registrationPage.sendKeyPassword();
             registrationPage.sendKeyCorrectPassword();
             registrationPage.registration();
-            writeResult.writeResult(worksheet, "Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", true);
+            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", true); // TODO: исправить acutal
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", false);
+            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", false);
             throw e;
         }
     }
@@ -109,10 +76,10 @@ public class AuthenticationTest {
             loginPage.sendKeysLogin();
             loginPage.sendKeysPassword();
             mainPage.goToExit();
-            writeResult.writeResult(worksheet, "Выход из аккаунта", "", "Log out test", true);
-            Assert.assertEquals(mainPage.textLogin(), "Выход");
+            writeResult.writeResult("Выход из аккаунта", "", "Log out test", true); // TODO: исправить acutal
+            Assert.assertEquals(mainPage.textLogin(), "Выход"); // здесь тоже постарайтесь, но здесь намного сложнее
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Выход из аккаунта", "", "Log out test", false);
+            writeResult.writeResult("Выход из аккаунта", "", "Log out test", false);
             throw e;
         }
     }
@@ -126,9 +93,9 @@ public class AuthenticationTest {
             loginPage.sendKeysPassword();
             Assert.assertEquals(mainPage.getUsername(), "Zhandos Kudaybergen");
             mainPage.goToExit();
-            writeResult.writeResult(worksheet, "Вход в аккаунт", "", "Log in test", true);
+            writeResult.writeResult("Вход в аккаунт", "", "Log in test", true); // TODO: исправить acutal
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Вход в аккаунт", "", "Log in test", false);
+            writeResult.writeResult("Вход в аккаунт", "", "Log in test", false);
             throw e;
         }
     }

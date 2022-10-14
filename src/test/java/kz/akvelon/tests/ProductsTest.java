@@ -1,27 +1,17 @@
 package kz.akvelon.tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import kz.akvelon.services.*;
 import kz.akvelon.listeners.ListenerTest;
 import kz.akvelon.pages.*;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import kz.akvelon.utils.driver.CreateDriver;
+import kz.akvelon.utils.logging.CreatorLogging;
 import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 @Listeners(ListenerTest.class)
 public class ProductsTest {
@@ -40,31 +30,22 @@ public class ProductsTest {
 
     public static WebDriver webdriver;
 
-    static Sheet worksheet;
-    static Workbook workbook;
-    static FileInputStream inStream;
-    static FileOutputStream outStream;
 
     private static WriteResult writeResult;
 
     private static ReadParam readParam;
 
+    private static CreatorLogging logging;
+
 
     @BeforeClass
-    public static void setup() throws Exception {
-        String web = ConfProperties.getProperty("web");
-        if (Objects.equals(web, "firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            webdriver = new FirefoxDriver();
-            System.setProperty("webdriver.gecko.driver", "geckodriver");
-        } else {
-            WebDriverManager.chromedriver().setup();
-            webdriver = new ChromeDriver();
-            System.setProperty("webdriver.chrome.driver", ConfProperties.getProperty("chromedriver"));
-        }
+    public static void setup() {
+        webdriver = CreateDriver.createDriver();
+        logging = CreatorLogging.getLogging();
+        writeResult = logging.createWriteResult();
+        readParam = logging.createReadParam();
 
-        webdriver.manage().window().maximize();
-        webdriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         webdriver.get(ConfProperties.getProperty("mainpage"));
 
         catalogGadgetsPage = new CatalogGadgetsPage(webdriver);
@@ -78,23 +59,12 @@ public class ProductsTest {
         filterPage = new FilterPage(webdriver);
         smartphonePage = new SmartphonePage(webdriver);
 
-        inStream =
-                new FileInputStream(ConfProperties.getProperty("shopkz.testdata.path"));
-        workbook = WorkbookFactory.create(inStream);
-        worksheet = workbook.getSheetAt(0);
-
-        writeResult = new WriteResultToExcel();
-        readParam = new ReadParamFromExcel(ConfProperties.getProperty("params.testdata.path"));
     }
 
     @AfterClass
-    public void tearDown() throws IOException {
-        outStream = new FileOutputStream(
-                ConfProperties.getProperty("shopkz.testdata.path"));
-        workbook.write(outStream);
-        outStream.close();
-        inStream.close();
-        workbook.close();
+    public void tearDown() {
+        logging.closeLogging();
+        webdriver.close();
     }
 
     @Test
@@ -108,6 +78,8 @@ public class ProductsTest {
         webdriver.navigate().refresh();
         listOfSmartphonesPage.clickCompareToFirstGadgets();
         Assert.assertEquals(comparePage.getString(), "Цена по прайсу");
+
+        // TODO: написать try catch
     }
 
     @Test
@@ -126,11 +98,11 @@ public class ProductsTest {
 
             System.out.println(readParam.readParam("hello"));
 
-            writeResult.writeResult(worksheet, "Общая стоимость:", orderPage.getString(),
+            writeResult.writeResult("Общая стоимость:", orderPage.getString(),
                     "Making Order", true);
             Assert.assertEquals(orderPage.getString(), "Общая стоимость:");
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Общая стоимость:", "",
+            writeResult.writeResult("Общая стоимость:", "",
                     "Making Order", false);
             throw e;
 
@@ -141,16 +113,16 @@ public class ProductsTest {
     @Test
     public void orderCancellation() {
         try {
-            webdriver.navigate().to(ConfProperties.getProperty("m"));
+            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
 
             listOfSmartphonesPage.clickToOrder();
             orderPage.clickToCancelOrder();
 
-            writeResult.writeResult(worksheet, "", orderPage.getString(),
+            writeResult.writeResult("", orderPage.getString(),
                     "Order Cancellation", true);
             Assert.assertEquals(orderPage.getString(), "");
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "", "",
+            writeResult.writeResult("", "",
                     "Order Cancellation", false);
             throw e;
 
@@ -160,7 +132,9 @@ public class ProductsTest {
     @Test
     public void findProductTest() {
         try {
-            webdriver.navigate().to(ConfProperties.getProperty("m"));
+            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+
+//            webdriver.navigate().to(ConfProperties.getProperty("m"));
 
             mainPage.clearQuery();
             mainPage.clickToQuery();
@@ -168,11 +142,11 @@ public class ProductsTest {
 
             System.out.println(readParam.readParam("hello"));
 
-            writeResult.writeResult(worksheet, "Результаты поиска по запросу \"Acer nitro 5\"", findProductPage.getString(),
+            writeResult.writeResult("Результаты поиска по запросу \"Acer nitro 5\"", findProductPage.getString(),
                     "Find Product test", true);
             Assert.assertEquals(findProductPage.getString(), "Результаты поиска по запросу \"Acer nitro 5\"");
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Результаты поиска по запросу \"Acer nitro 5\"", "",
+            writeResult.writeResult("Результаты поиска по запросу \"Acer nitro 5\"", "",
                     "Find Product test", false);
             throw e;
         }
@@ -186,11 +160,11 @@ public class ProductsTest {
             filterPage.sendReqMin();
             filterPage.sendReqMax();
             filterPage.setFilter();
-            writeResult.writeResult(worksheet, "Фильтрация результатов поиска по \"min:40000, max:120000\"", findProductPage.getString(),
+            writeResult.writeResult("Фильтрация результатов поиска по \"min:40000, max:120000\"", findProductPage.getString(),
                     "Filtering Search Results Test", true);
-            Assert.assertEquals(filterPage.howMany(), "46");
+            Assert.assertEquals(filterPage.howMany(), "46"); // TODO: постараться здесь исправить
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Фильтрация результатов поиска по \"min:40000, max:120000\"", "",
+            writeResult.writeResult("Фильтрация результатов поиска по \"min:40000, max:120000\"", "",
                     "Filtering Search Results Test", false);
             throw e;
         }
@@ -208,12 +182,12 @@ public class ProductsTest {
 
             System.out.println(readParam.readParam("hello"));
 
-            writeResult.writeResult(worksheet, "Вы успешно подписались", smartphonePage.getTextSubscribe(),
+            writeResult.writeResult("Вы успешно подписались", smartphonePage.getTextSubscribe(),
                     "Notify Test", true);
             Assert.assertEquals(smartphonePage.getTextSubscribe(), "Вы успешно подписались");
 
         } catch (Exception e) {
-            writeResult.writeResult(worksheet, "Вы успешно подписались", "",
+            writeResult.writeResult("Вы успешно подписались", "",
                     "Notify Test", false);
             throw e;
         }
