@@ -9,7 +9,8 @@ public class ListOfSmartphonesPage {
     public WebDriver driver;
     @FindBy(xpath = "//a[@id=\"bx_3966226736_1451597_compare_link\"]")
     private WebElement buttonToFirstSmartphone;
-
+    @FindBy(xpath = "//div[@id=\"comparison\"]")
+    private WebElement compare;
     @FindBy(xpath = "//a[@id=\"bx_3966226736_1451573_compare_link\"]")
     private WebElement buttonToSecondSmartphone;
 
@@ -40,7 +41,9 @@ public class ListOfSmartphonesPage {
     public void clickCompareToSecondGadgets() {
         buttonToSecondSmartphone.click();
     }
-
+    public void setCompare(){
+        compare.click();
+    }
 
     public void addToOrder() {
         buttonAddToOrder.click();

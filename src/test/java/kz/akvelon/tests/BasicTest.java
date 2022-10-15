@@ -62,13 +62,19 @@ public class BasicTest {
 
     @Test
     public void changeCityTest() {
-        webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-        mainPage.changeCity();
-        mainPage.changeCityToAstana();
-        webdriver.navigate().refresh();
+        try {
+            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+            mainPage.changeCity();
+            mainPage.changeCityToAstana();
+            mainPage.getTextCity();
+            writeResult.writeResult("Астана", mainPage.getTextCity(),
+                    "Change City", true);
+            Assert.assertEquals(mainPage.getTextCity(), "Астана");
+        } catch (Exception e) {
+            writeResult.writeResult( "Астана", "",
+                    "Change City", false);
+            throw e;
+        }
 
-        Assert.assertEquals(mainPage.getTextCity(), "Астана");
-
-        // TODO: написать try catch
     }
 }

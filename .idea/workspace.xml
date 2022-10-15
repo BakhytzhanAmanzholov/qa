@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86befbd6-c1e8-4fc4-995c-da4d81a17d9e" name="Changes" comment="first">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/FilterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/FilterPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/ListOfSmartphonesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/ListOfSmartphonesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/ProductsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,23 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bakhytzhan/qa/src/test/java/kz/akvelon&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Bakhytzhan/qa/src/test/java/kz/akvelon",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Bakhytzhan\qa\src\test\java\kz\akvelon" />
@@ -170,6 +172,7 @@
       <workItem from="1665570329449" duration="469000" />
       <workItem from="1665761965811" duration="2914000" />
       <workItem from="1665767372766" duration="2539000" />
+      <workItem from="1665812955621" duration="1203000" />
     </task>
     <servers />
   </component>

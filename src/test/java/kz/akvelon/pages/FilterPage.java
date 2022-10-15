@@ -30,7 +30,9 @@ public class FilterPage {
     public void sendReqMax(String max){
         inputMax.sendKeys(max);
     }
-
+    public String getPrice(){
+        return inputMin.getAttribute("value");
+    }
     public void setFilter(){
         buttonSubmit.click();
     }

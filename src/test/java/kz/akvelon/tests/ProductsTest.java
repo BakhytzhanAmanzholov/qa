@@ -68,17 +68,24 @@ public class ProductsTest {
 
     @Test
     public void comparisonProductsTest() {
-        webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-        mainPage.goToCatalogGadgets();
-        catalogGadgetsPage.clickLinkToGadgets();
-        catalogSmartphonesPage.clickLinkToGadgets();
-        listOfSmartphonesPage.clickCompareToFirstGadgets();
-        listOfSmartphonesPage.clickCompareToSecondGadgets();
-        webdriver.navigate().refresh();
-        listOfSmartphonesPage.clickCompareToFirstGadgets();
-        Assert.assertEquals(comparePage.getString(), "Цена по прайсу");
-
-        // TODO: написать try catch
+        try {
+            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+            mainPage.goToCatalogGadgets();
+            catalogGadgetsPage.clickLinkToGadgets();
+            catalogSmartphonesPage.clickLinkToGadgets();
+            listOfSmartphonesPage.clickCompareToFirstGadgets();
+            listOfSmartphonesPage.clickCompareToSecondGadgets();
+            webdriver.navigate().refresh();
+            listOfSmartphonesPage.setCompare();
+            System.out.println(readParam.readParam("hello"));
+            writeResult.writeResult( "Цена по прайсу", comparePage.getString(),
+                    "Product comparison", true);
+            Assert.assertEquals(comparePage.getString(), "Цена по прайсу");
+        }catch (Exception e) {
+            writeResult.writeResult( "Цена по прайсу", "",
+                    "Product comparison", false);
+            throw e;
+        }
     }
 
     @Test
@@ -157,11 +164,11 @@ public class ProductsTest {
             filterPage.sendReqMin("40000");
             filterPage.sendReqMax("120000");
             filterPage.setFilter();
-            writeResult.writeResult("Фильтрация результатов поиска по \"min:40000, max:120000\"", findProductPage.getString(),
+            writeResult.writeResult("40000", filterPage.getPrice(),
                     "Filtering Search Results Test", true);
-            Assert.assertEquals(filterPage.howMany(), "46"); // TODO: постараться здесь исправить
+            Assert.assertEquals(filterPage.getPrice(), "40000");
         } catch (Exception e) {
-            writeResult.writeResult("Фильтрация результатов поиска по \"min:40000, max:120000\"", "",
+            writeResult.writeResult("40000", "",
                     "Filtering Search Results Test", false);
             throw e;
         }
@@ -194,13 +201,22 @@ public class ProductsTest {
 
     @Test
     public void wishlistTest() {
-        webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
-        mainPage.goToCatalogGadgets();
-        catalogGadgetsPage.clickLinkToGadgets();
-        catalogSmartphonesPage.clickLinkToGadgets();
-        listOfSmartphonesPage.addToWithList();
-        listOfSmartphonesPage.goToWishList();
-        Assert.assertEquals(listOfSmartphonesPage.getTextHeading(), "Мой список желаний");
+        try {
+            webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+            mainPage.goToCatalogGadgets();
+            catalogGadgetsPage.clickLinkToGadgets();
+            catalogSmartphonesPage.clickLinkToGadgets();
+            listOfSmartphonesPage.addToWithList();
+            listOfSmartphonesPage.goToWishList();
+            System.out.println(readParam.readParam("hello"));
+            writeResult.writeResult("Мой список желаний", listOfSmartphonesPage.getTextHeading(),
+                    "Adding wish list", true);
+            Assert.assertEquals(listOfSmartphonesPage.getTextHeading(), "Мой список желаний");
+        } catch (Exception e) {
+            writeResult.writeResult("Мой список желаний", "",
+                    "Adding wish list", false);
+            throw e;
+        }
     }
 
 }
