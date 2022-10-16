@@ -35,6 +35,7 @@ public class BasicTest {
         webdriver.get(ConfProperties.getProperty("mappage"));
 
         mapPage = new MapPage(webdriver);
+        mainPage = new MainPage(webdriver);
 
     }
 
@@ -50,9 +51,15 @@ public class BasicTest {
             webdriver.navigate().to(ConfProperties.getProperty("mappage"));
             mapPage.goToMap();
 
-            writeResult.writeResult("Ещё", mapPage.getTextMap(),
-                    "Map test", true); // TODO: исправить acutal
-            Assert.assertEquals(mapPage.getTextMap(), "Ещё"); // TODO: постарайтесь и здесь исправить
+            if(mapPage.isDisplayedMap()){
+                writeResult.writeResult("Ещё", "Ещё",
+                        "Map test", true);
+            }
+            else {
+                writeResult.writeResult("Ещё", "",
+                        "Map test", true);
+                throw new IllegalArgumentException();
+            }
         } catch (Exception e) {
             writeResult.writeResult("Ещё", "",
                     "Map test", false);
@@ -64,12 +71,13 @@ public class BasicTest {
     public void changeCityTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
+            mainPage.closeWindows();
             mainPage.changeCity();
             mainPage.changeCityToAstana();
             mainPage.getTextCity();
             writeResult.writeResult("Астана", mainPage.getTextCity(),
                     "Change City", true);
-            Assert.assertEquals(mainPage.getTextCity(), "Астана");
+            Assert.assertEquals("Астана", mainPage.getTextCity());
         } catch (Exception e) {
             writeResult.writeResult( "Астана", "",
                     "Change City", false);

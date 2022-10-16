@@ -24,11 +24,11 @@ public class ReadParamFromDB implements ReadParam {
 
     private static final Function<ResultSet, Key> keyRowMapper = row -> {
         try {
-            return Key.builder()
-                    .id(row.getLong("id"))
-                    .key(row.getString("key"))
-                    .value(row.getString("value"))
-                    .build();
+            Key key = new Key();
+            key.setId(row.getLong("id"));
+            key.setKey(row.getString("key"));
+            key.setValue(row.getString("value"));
+            return key;
         } catch (SQLException e) {
             throw new IllegalStateException(e);
         }

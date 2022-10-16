@@ -34,6 +34,7 @@ public class AuthenticationTest {
         webdriver = CreateDriver.createDriver();
         logging = CreatorLogging.getLogging();
         writeResult = logging.createWriteResult();
+        readParam = logging.createReadParam();
 
         registrationPage = new RegistrationPage(webdriver);
         mainPage = new MainPage(webdriver);
@@ -75,7 +76,7 @@ public class AuthenticationTest {
             loginPage.sendKeysPassword(readParam.readParam("password"));
             mainPage.goToExit();
             writeResult.writeResult("Выход из аккаунта", "", "Log out test", true); // TODO: исправить acutal
-            Assert.assertEquals(mainPage.textLogin(), "Выход"); // здесь тоже постарайтесь, но здесь намного сложнее
+            Assert.assertEquals("Вход", mainPage.textLogin()); // здесь тоже постарайтесь, но здесь намного сложнее
         } catch (Exception e) {
             writeResult.writeResult("Выход из аккаунта", "", "Log out test", false);
             throw e;

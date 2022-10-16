@@ -11,8 +11,9 @@ public class MapPage {
     @FindBy(xpath = "//a[@href=\"#map-266460\"]")
     private WebElement linkToMap;
 
-    @FindBy(xpath = "//ymaps[contains(text(),'Ещё')]")
-    private WebElement textMap;
+    @FindBy(xpath = "//div[@id=\"map-266460\"]")
+    private WebElement map;
+
 
     public MapPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -23,7 +24,7 @@ public class MapPage {
         linkToMap.click();
     }
 
-    public String getTextMap() {
-        return textMap.getText();
+    public boolean isDisplayedMap() {
+        return map.isDisplayed();
     }
 }
