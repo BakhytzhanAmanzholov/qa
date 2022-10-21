@@ -51,7 +51,6 @@ public class ReadParamFromDB implements ReadParam {
             }
 
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new IllegalArgumentException(e);
         }
 
