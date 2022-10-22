@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/Features/shopkzReport.feature",
         glue = {"kz.akvelon.stepDefinitions"},
         plugin = {"pretty", "html:target/index.html", "json:target/report/cucumber.json"},
-        monochrome = true
+        monochrome = true,
+        tags = "@shop.kz"
 )
 
 

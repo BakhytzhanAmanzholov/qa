@@ -1,6 +1,5 @@
 package kz.akvelon.tests;
 
-import io.cucumber.junit.Cucumber;
 import kz.akvelon.listeners.ListenerTest;
 import kz.akvelon.pages.LoginPage;
 import kz.akvelon.pages.MainPage;
