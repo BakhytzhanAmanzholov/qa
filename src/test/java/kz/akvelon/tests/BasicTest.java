@@ -52,16 +52,16 @@ public class BasicTest {
             mapPage.goToMap();
 
             if(mapPage.isDisplayedMap()){
-                writeResult.writeResult("Ещё", "Ещё",
+                writeResult.writeResult("The marked coordinate has been selected and pressed", "Open the location of the selected locations",
                         "Map test", true);
             }
             else {
-                writeResult.writeResult("Ещё", "",
+                writeResult.writeResult("Not found", "Open the location of the selected locations",
                         "Map test", true);
                 throw new IllegalArgumentException();
             }
         } catch (Exception e) {
-            writeResult.writeResult("Ещё", "",
+            writeResult.writeResult("Open the location of the selected locations", "The coordinates cannot be found or not found in this marked coordinate",
                     "Map test", false);
             throw e;
         }
@@ -79,7 +79,7 @@ public class BasicTest {
                     "Change City", true);
             Assert.assertEquals("Астана", mainPage.getTextCity());
         } catch (Exception e) {
-            writeResult.writeResult( "Астана", "",
+            writeResult.writeResult( "Астана", "Not changed",
                     "Change City", false);
             throw e;
         }
