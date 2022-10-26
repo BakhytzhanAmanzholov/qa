@@ -3,9 +3,7 @@ package kz.akvelon.stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import kz.akvelon.pages.FilterPage;
-import kz.akvelon.pages.FindProductPage;
-import kz.akvelon.pages.MainPage;
+import kz.akvelon.pages.*;
 import kz.akvelon.services.ConfProperties;
 import kz.akvelon.utils.driver.CreateDriver;
 import org.openqa.selenium.WebDriver;
@@ -22,12 +20,26 @@ public class ShopkzReport {
 
     private FilterPage filterPage;
 
+    private CatalogGadgetsPage catalogGadgetsPage;
+
+    private CatalogSmartphonesPage catalogSmartphonesPage;
+
+    private ListOfSmartphonesPage listOfSmartphonesPage;
+
+    private ComparePage comparePage;
+    private LoginPage loginPage;
+
     @When("open browser")
     public void open_browser() {
         webDriver = CreateDriver.createDriver();
         mainPage = new MainPage(webDriver);
         findProductPage = new FindProductPage(webDriver);
         filterPage = new FilterPage(webDriver);
+        catalogGadgetsPage = new CatalogGadgetsPage(webDriver);
+        listOfSmartphonesPage = new ListOfSmartphonesPage(webDriver);
+        catalogSmartphonesPage = new CatalogSmartphonesPage(webDriver);
+        comparePage = new ComparePage(webDriver);
+        loginPage = new LoginPage(webDriver);
     }
 
     @Given("go to main")
@@ -79,5 +91,45 @@ public class ShopkzReport {
     @Then("text of filter title should be as {string}")
     public void textOfFilterTitleShouldBeAs(String arg0) {
         assertEquals(arg0, filterPage.getPrice());
+    }
+
+    @When("go to catalog")
+    public void go_to_catalog() {
+        webDriver.navigate().to(ConfProperties.getProperty("catalogpage")); }
+
+    @Then("click to link to gadgets")
+    public void click_to_link_to_gadgets() {
+        catalogGadgetsPage.clickLinkToGadgets();
+        catalogSmartphonesPage.clickLinkToGadgets();
+    }
+
+    @Then("add to compare gadgets")
+    public void add_to_order() {
+        listOfSmartphonesPage.clickCompareToFirstGadgets();
+        listOfSmartphonesPage.clickCompareToSecondGadgets();
+        webDriver.navigate().refresh();
+        listOfSmartphonesPage.setCompare();
+    }
+
+    @Then("comparison should be as {string}")
+    public void comparison_should_be(String expected) {
+        assertEquals(comparePage.getString(), expected);
+    }
+
+
+    @When("go to login page")
+    public void goToLoginPage() {
+        mainPage.goToLogin();
+    }
+
+    @Then("set username as {string} and password as {string}")
+    public void setUsernameAsAndPasswordAs(String arg0, String arg1) {
+        loginPage.sendKeysLogin(arg0);
+        loginPage.sendKeysPassword(arg1);
+    }
+
+    @Then("username should be as {string}")
+    public void usernameShouldBeAs(String arg0) {
+        assertEquals(arg0, loginPage.getUsername());
     }
 }

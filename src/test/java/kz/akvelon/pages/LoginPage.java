@@ -18,6 +18,9 @@ public class LoginPage {
     @FindBy(xpath = "//input[@name=\"USER_PASSWORD\"]")
     private WebElement userPassword;
 
+    @FindBy(xpath = "//span[@class=\"bx-user-name\"]")
+    private WebElement username;
+
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -31,5 +34,9 @@ public class LoginPage {
 
     public void sendKeysPassword(String password) {
         userPassword.sendKeys(password, Keys.ENTER);
+    }
+
+    public String getUsername(){
+        return username.getText();
     }
 }
