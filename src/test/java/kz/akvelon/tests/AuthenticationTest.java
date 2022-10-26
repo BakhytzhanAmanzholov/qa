@@ -59,9 +59,9 @@ public class AuthenticationTest {
             registrationPage.sendKeyPassword(readParam.readParam("password"));
             registrationPage.sendKeyCorrectPassword(readParam.readParam("correctPassword"));
             registrationPage.registration();
-            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", true); // TODO: исправить acutal
+            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "Enter the marked coordinates and write the text in this area", "Registration test", true); // TODO: Enter the marked coordinates and write the text in this area
         } catch (Exception e) {
-            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "", "Registration test", false);
+            writeResult.writeResult("Заполнение формы регистраций и регистрироваться в сайте по имени \"Kudaybergen Zhandos\"", "The marked coordinates have not been entered and the text in this area has not been recorded", "Registration test", false);
             throw e;
         }
     }
@@ -75,10 +75,10 @@ public class AuthenticationTest {
             loginPage.sendKeysLogin(readParam.readParam("email"));
             loginPage.sendKeysPassword(readParam.readParam("password"));
             mainPage.goToExit();
-            writeResult.writeResult("Выход из аккаунта", "", "Log out test", true); // TODO: исправить acutal
-            Assert.assertEquals("Вход", mainPage.textLogin()); // здесь тоже постарайтесь, но здесь намного сложнее
+            writeResult.writeResult("Выход из аккаунта", "Go to the main page, find the path to the \"Выход\" button and click on the", "Log out test", true); // TODO: Go to the main page, find the path to the "Exit" button and click on the
+            Assert.assertEquals(mainPage.textLogin(), "Выход"); // здесь тоже постарайтесь, но здесь намного сложнее
         } catch (Exception e) {
-            writeResult.writeResult("Выход из аккаунта", "", "Log out test", false);
+            writeResult.writeResult("Выход из аккаунта", "In the main page, the path to the \"Exit\" button was not found", "Log out test", false);
             throw e;
         }
     }
@@ -92,9 +92,9 @@ public class AuthenticationTest {
             loginPage.sendKeysPassword(readParam.readParam("password"));
             Assert.assertEquals(mainPage.getUsername(), readParam.readParam("username"));
             mainPage.goToExit();
-            writeResult.writeResult("Вход в аккаунт", "", "Log in test", true); // TODO: исправить acutal
+            writeResult.writeResult("Вход в аккаунт", "Find xpath and write down the login parameters", "Log in test", true); // TODO: исправить acutal
         } catch (Exception e) {
-            writeResult.writeResult("Вход в аккаунт", "", "Log in test", false);
+            writeResult.writeResult("Вход в аккаунт", "Find xpath and write down the login parameters", "Log in test", false);
             throw e;
         }
     }
