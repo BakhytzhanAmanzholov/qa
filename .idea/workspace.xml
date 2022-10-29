@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86befbd6-c1e8-4fc4-995c-da4d81a17d9e" name="Changes" comment="first">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/stepDefinitions/ShopkzReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/stepDefinitions/ShopkzReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/conf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +205,7 @@
       <workItem from="1666381591809" duration="200000" />
       <workItem from="1666434987890" duration="2449000" />
       <workItem from="1666438445642" duration="2351000" />
-      <workItem from="1667028837970" duration="5147000" />
+      <workItem from="1667028837970" duration="5826000" />
     </task>
     <servers />
   </component>
@@ -234,6 +226,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first" />
     <option name="LAST_COMMIT_MESSAGE" value="first" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java</url>
+          <line>11</line>
+          <properties field="dataSource" class="kz.akvelon.utils.logging.DatabaseLogging" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/qa$Feature__cucumberReport__2_.ic" NAME="Feature: cucumberReport (2) Coverage Results" MODIFIED="1666373251404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
