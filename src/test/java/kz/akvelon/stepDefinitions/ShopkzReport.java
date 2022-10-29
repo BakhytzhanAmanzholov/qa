@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import kz.akvelon.pages.*;
 import kz.akvelon.services.ConfProperties;
 import kz.akvelon.utils.driver.CreateDriver;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 import static org.junit.Assert.assertEquals;
@@ -131,5 +132,17 @@ public class ShopkzReport {
     @Then("username should be as {string}")
     public void usernameShouldBeAs(String arg0) {
         assertEquals(arg0, loginPage.getUsername());
+    }
+    @Then("Click on the name of the city")
+    public void clickOnName(){
+        mainPage.changeCity();
+    }
+    @Then("Choose the city {string}")
+    public void chooseCity(String city){
+        mainPage.changeCityTo(city);
+    }
+    @Then("Name of city should be {string}")
+    public void changeCity(String city){
+        Assert.assertEquals(city, mainPage.getTextCity());
     }
 }

@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86befbd6-c1e8-4fc4-995c-da4d81a17d9e" name="Changes" comment="first">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bb3d1fb7-0ebc-47d6-9844-70d7d05588a5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/report/RunTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/report/RunTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/pages/MainPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/stepDefinitions/ShopkzReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/stepDefinitions/ShopkzReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/AuthenticationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/tests/BasicTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/kz/akvelon/utils/logging/DatabaseLogging.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/conf.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/conf.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +74,7 @@
       <recent name="kz.akvelon.stepDefinitions" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Filter products in query">
+  <component name="RunManager" selected="Cucumber Java.Scenario: City Change Test">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -82,14 +86,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: cucumberReport (3)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Feature: shopkzReport (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/cucumberReport.feature" />
-      <option name="GLUE" value="kz.akvelon.report" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" />
+      <option name="GLUE" value="kz.akvelon.stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="qa" />
+      <module name="QA" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: cucumberReport" />
+      <option name="SUGGESTED_NAME" value="Feature: shopkzReport" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -101,14 +105,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: shopkzReport" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: City Change Test" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/shopkzReport.feature" />
       <option name="GLUE" value="kz.akvelon.stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="qa" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: shopkzReport" />
+      <module name="QA" />
+      <option name="NAME_FILTER" value="^City Change Test$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^City Change Test$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: City Change Test" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -140,28 +145,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Find product in query" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/cucumberReport.feature" />
-      <option name="GLUE" value="kz.akvelon.report" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="qa" />
-      <option name="NAME_FILTER" value="^Find product in query$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Find product in query$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Find product in query" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="RunTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="qa" />
+      <module name="QA" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="kz.akvelon.report.*" />
@@ -170,18 +155,37 @@
       </extension>
       <option name="PACKAGE_NAME" value="kz.akvelon.report" />
       <option name="MAIN_CLASS_NAME" value="kz.akvelon.report.RunTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicTest.changeCityTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="QA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="kz.akvelon.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="kz.akvelon.tests" />
+      <option name="MAIN_CLASS_NAME" value="kz.akvelon.tests.BasicTest" />
+      <option name="METHOD_NAME" value="changeCityTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Filter products in query" />
-        <item itemvalue="Cucumber Java.Feature: shopkzReport" />
+        <item itemvalue="Cucumber Java.Scenario: City Change Test" />
         <item itemvalue="JUnit.RunTest" />
-        <item itemvalue="Cucumber Java.Feature: cucumberReport (3)" />
-        <item itemvalue="Cucumber Java.Scenario: Find product in query" />
+        <item itemvalue="TestNG.BasicTest.changeCityTest" />
+        <item itemvalue="Cucumber Java.Feature: shopkzReport (1)" />
+        <item itemvalue="Cucumber Java.Scenario: Filter products in query" />
       </list>
     </recent_temporary>
   </component>
@@ -208,6 +212,8 @@
       <workItem from="1666377048088" duration="120000" />
       <workItem from="1666381591809" duration="200000" />
       <workItem from="1666434987890" duration="2449000" />
+      <workItem from="1666438445642" duration="2351000" />
+      <workItem from="1667028837970" duration="5147000" />
     </task>
     <servers />
   </component>

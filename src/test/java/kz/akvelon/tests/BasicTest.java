@@ -67,13 +67,14 @@ public class BasicTest {
         }
     }
 
+
     @Test
     public void changeCityTest() {
         try {
             webdriver.navigate().to(ConfProperties.getProperty("mainpage"));
             mainPage.closeWindows();
             mainPage.changeCity();
-            mainPage.changeCityToAstana();
+            mainPage.changeCityTo("Астана");
             mainPage.getTextCity();
             writeResult.writeResult("Астана", mainPage.getTextCity(),
                     "Change City", true);

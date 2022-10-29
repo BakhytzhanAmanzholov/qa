@@ -15,7 +15,7 @@ public class DatabaseLogging extends CreatorLogging{
         HikariConfig config = new HikariConfig();
         config.setJdbcUrl("jdbc:postgresql://localhost:5432/qa");
         config.setUsername("postgres");
-        config.setPassword("abc123");
+        config.setPassword("postgre");
         config.setMaximumPoolSize(20);
 
         dataSource = new HikariDataSource(config);

@@ -61,3 +61,21 @@ Feature: Shop.kz
       | login                  | password    | username            |
       | janjan.06.kz@gmail.com | 5nFy2UWCJ2b | Zhandos Kudaybergen |
       | janjan.05.kz@gmail.com | 5nFy2UWCJ2b | Zhandos Kudaybergen |
+
+  #Temirlan Myrzagaliev
+  #noinspection NonAsciiCharacters
+  Scenario Outline: City Change Test
+  An attempt to change the city to Astana
+
+    When open browser
+    Then go to main
+    When close windows
+    Then Click on the name of the city
+    Then Choose the city "<Selected city>"
+    Then Name of city should be "<Expected city>"
+    Examples:
+      | Selected city | Expected city|
+      | Астана        | Астана       |
+      | Павлодар      | Павлодар     |
+
+

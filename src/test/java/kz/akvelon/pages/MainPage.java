@@ -1,5 +1,6 @@
 package kz.akvelon.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
     public WebDriver driver;
-
     @FindBy(xpath = "//input[@name=\"query\"]")
     private WebElement queryInput;
 
@@ -30,6 +30,7 @@ public class MainPage {
 
     @FindBy(xpath = "//a[contains(text(),'Астана')]")
     private WebElement linkChangeCityAstana;
+
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -77,12 +78,18 @@ public class MainPage {
         linkChangeCity.click();
     }
 
-    public void changeCityToAstana() {
-        linkChangeCityAstana.click();
+    public void changeCityTo(String city) {
+        WebElement citySelect= driver.findElement(By.xpath("//a[contains(text(),'"+city+"')]"));
+        citySelect.click();
     }
 
     public String getTextCity() {
-        return linkChangeCityAstana.getText();
+        String name;
+        WebElement citySelected= driver.findElement(By.className("selected"));
+        name=citySelected.getText();
+        WebElement citySelected2= driver.findElement(By.className("selected"));
+        name=citySelected2.getText();
+        return name;
     }
 
 }
